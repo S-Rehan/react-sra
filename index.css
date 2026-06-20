@@ -1,3 +1,383 @@
-#heading {
-    color: red;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;      /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    background: #0077cc;
+    /* color: white; */
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+} 
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.login-btn {
+    padding: 0 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.nav-items > ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-items > ul > li {
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.nav-items li:hover {
+    text-decoration: none;
+}
+
+a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit;         /* Takes the color of the surrounding text */
+}
+
+
+.nav-items a:hover {
+  color: white;
+  transform: scale(1.1);    /* Increases size by 10% */
+  
+  /* Bonus: Combine with your glow from earlier! */
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+}
+
+body {
+  margin: 0;                  /* remove default margin */
+  height: 100vh;              /* fix body to viewport height */
+  overflow-y: auto; 
+  background-image: url("https://st.hzcdn.com/simgs/pictures/patios/irvine-terrace-1-garden-studio-img~0c616c8700b27c67_14-3108-1-b6c2fcb.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.container {
+  flex: 1;            /* take up remaining space */
+  overflow-y: auto;   /* scroll only here */
+  padding-top: 1rem;
+}
+
+
+.search {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    /* background-color: #0077cc60; */
+    background-color:#f1f1f160;  
+}
+
+.res-card {
+    padding: 5px;
+    width: 200px;
+
+    /* Smooth out the magnification */
+    transition: transform 0.3s ease-in-out; 
+    cursor: pointer;
+}
+
+.res-card:hover {
+    cursor: pointer;
+    
+    /* Magnifies the card to 1.05x its original size */
+    transform: scale(1.05); 
+    
+    /* Optional: Add a shadow to make it look like it's lifting off the screen */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.res-logo {
+    height: 130px;
+    width: 100%;
+}
+
+.carousel {
+  height: 200px;        /* fixed height for carousel */
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;     /* horizontal scroll */
+  padding: 1rem;
+  background: #eee;
+}
+
+.footer {
+  height: 70px;       /* fixed footer height */
+  background-color: #1561ad;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter {
+    display: flex;
+    background-color: #f1f1f160;
+    flex: 1;            /* take up remaining space */
+    overflow-y: auto;   /* scroll only here */
+    padding: 1rem;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem, 0;
+}   
+
+.filter-btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.search-btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0077cc;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.shimmer-body {
+  margin: 0;                  /* remove default margin */
+  height: 100vh;              /* fix body to viewport height */
+  overflow-y: auto; 
+  background-image: url("https://st.hzcdn.com/simgs/pictures/patios/irvine-terrace-1-garden-studio-img~0c616c8700b27c67_14-3108-1-b6c2fcb.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.shimmer-container {
+  flex: 1;            /* take up remaining space */
+  overflow-y: auto;   /* scroll only here */
+  padding-top: 1rem; 
+}
+
+.shimmer-res-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    /* background-color: #1561ad; */
+    background-color:#f1f1f160;
+}
+
+.shimmer-card {
+    width: 210px;
+    height: 350px;
+    background: linear-gradient(
+    90deg,
+    #f0f0f080 25%,
+    #e0e0e080 50%,
+    #f0f0f080 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-filter {
+    display: flex;
+    background-color:#f1f1f160;
+    flex: 1;            /* take up remaining space */
+    overflow-y: auto;   /* scroll only here */
+    padding: 1rem;
+    justify-content: center;
+}
+
+.shimmer-btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: lightgray;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.contact-us {
+  flex: 1;            /* take up remaining space */
+  overflow-y: auto;   /* scroll only here */
+  padding: 1rem;
+  background: #f8f8f8;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background-color: #0077cc;
+}
+
+.contact-body {
+  flex: 1;            /* take up remaining space */
+  overflow-y: auto;   /* scroll only here */
+  padding: 1rem;
+  background: #f8f8f8;
+}
+
+.about-us {
+  flex: 1;            /* take up remaining space */
+  overflow-y: auto;   /* scroll only here */
+  padding: 1rem;
+  /* background: #f8f8f8; */
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f1f1f160;
+}
+
+.about-body {
+  flex: 1;            /* take up remaining space */
+  overflow-y: auto;   /* scroll only here */
+  padding: 1rem;
+  background: #f8f8f8;
+}
+
+.menu {
+  flex: 1;            /* take up remaining space */
+  overflow-y: auto;   /* scroll only here */
+  padding: 1rem;
+  /* background: #f8f8f8;  */
+}
+
+.menu-outer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f1f1f160;
+}
+
+.menu-info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center; /* Centers text horizontally */
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #E5F0F0;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    border: 1px solid #e9e9eb;
+    margin-top: 10px;
+    margin:auto;
+}
+
+.menu-det {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center; /* Centers text horizontally */
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #E5F0F0;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    border: 1px solid #e9e9eb;
+    margin-top: 10px;
+    margin:auto;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #E5F0F0;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    border: 1px solid #e9e9eb;
+    margin-top: 20px;
+    margin:auto;
+}
+
+.menu-items > ul{
+  list-style-type: none;
+}
+
+.acc-title {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  background-color: #80808040;
+  display: flex;
+  justify-content: space-between;
+}
+
+.acc-body { 
+  padding: 5px;
+}
+
+.accordian-item {
+  border: 1px solid black;
+  padding-top: 3px;
 }
